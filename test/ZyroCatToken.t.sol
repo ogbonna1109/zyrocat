@@ -27,5 +27,12 @@ contract ZyroCatTokenTest is Test {
         assertEq(token.balanceOf(address(this)), 1_000_000 * 10 ** 18);
     }
 
-    
+    function test_TransferToken() public {
+        address Henry = makeAddr("Henry");
+
+        token.transfer(Henry, 100 ether);
+
+        assertEq(token.balanceOf(address(this)), 1_000_000 ether - 100 ether);
+        assertEq(token.balanceOf(Henry), 100 ether);
+    }
 }
