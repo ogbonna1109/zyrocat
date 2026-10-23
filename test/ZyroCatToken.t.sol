@@ -26,4 +26,6 @@ contract ZyroCatTokenTest is Test {
     function test_DeployerBalance() public {
         assertEq(token.balanceOf(address(this)), 1_000_000 * 10 ** 18);
     }
+
+    
 }
